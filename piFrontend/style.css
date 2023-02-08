@@ -1,0 +1,146 @@
+
+html, body {
+    margin: 0px;  
+    height:inherit; 
+    background-color:#324254;
+    background-image: url(https://i.imgur.com/7JZr3Ba.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+
+}
+.mainText{
+    text-align:right;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: 0.02em;
+    padding-right: 20px;
+    color: #ffffffe0;
+}
+
+.mainBoard{
+    background-color:rgba(0, 0, 0, 0.467);
+  width: 80%;
+  height: auto;
+  padding: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border-radius:20px;
+  box-shadow:25px 20px 30px -10px rgba(0, 0, 0, 0.383);
+}
+
+.LeftPart{
+
+  height: 100%;
+
+}
+
+.Tem,.Hum{
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: #324254; */
+  position: relative;
+  /* width: 320px;
+  height: 170px; */
+  width: 70%;
+  height: 190px;
+  min-width:320px;
+  max-width:400px;
+}
+
+.Text{
+    
+    text-align:right;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+    color: #FFD68F;
+    
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+.TempIcon{
+    display:inline-block;
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+    
+}
+.HumIcon{
+    display:inline-block;
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+ }
+
+hr{
+    position: relative;
+    width: 80%;  
+    height: 2px;  
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(91, 91, 91);  
+    border-color: rgb(63, 63, 63);
+
+}
+
+
+.TemUnit{
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    display:inline-block;
+}
+.HumUnit{
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    display:inline-block;
+}
+.TemDataText {
+    display:inline-block;
+    position: absolute;
+    color: white;
+    right: 20%;
+    bottom: 20px;
+    font-weight: 300;
+    font-size: 80px;
+    line-height: 40px;
+  
+}
+.HumDataText {
+  display:inline-block;
+  position: absolute;
+  color: white;
+  right: 20%;
+  bottom: 20px;
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 40px;
+}
+
+/* 圖表部分 */
+
+  .chartCard {
+    height:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chartBox {
+    flex: auto;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 3px rgba(177, 186, 158, 0);
+    background: rgba(255, 255, 255, 0);
+  }

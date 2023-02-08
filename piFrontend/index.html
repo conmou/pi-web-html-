@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tw">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="50">
+    <title>樹梅派溫溼度練習</title>
+    <style></style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="icon" href="https://i.imgur.com/dPhBp7b.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body onLoad ="updateChart()">
+    <div class="mainBoard">
+      <div class="mainText">Raspberry Pi</div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="LeftPart">
+              <div class="Tem">
+                <div class="Text">Temperature</div>
+                <div class="TempIcon"><img src="https://i.imgur.com/wwoENrp.png" height="140px"> </div>
+                <div class="TemDataText"></div>
+                <div class="TemUnit"><img src='https://i.imgur.com/nwSl1d6.png' height="30px" ></div>
+              </div>
+        
+              <!-- <div class="liner"><img src='https://i.imgur.com/mwEcn13.png'></div> -->
+              <hr>  
+        
+              <div class="Hum">
+                <div class="Text">Humidity</div>
+                <div class="HumIcon"><img src="https://i.imgur.com/vIWLmw4.png" height="114px"></div>
+                <div class="HumDataText"></div>
+                <div class="HumUnit"><img src='https://i.imgur.com/CF7uCm4.png' height="30px" ></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 chartCard">
+          <!-- 圖表部分 -->
+            
+            <div class="chartBox">
+              <canvas id="myChart" width="800"></canvas> 
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- 拿氣溫資料 TM 改P -->
+        <script>
+          fetch('http://localhost:4000/TUM').then(res=>{
+            return res.json()
+          })
+            .then(data=>{
+              data.forEach(user=>{
+                const Tm=`${user.temp}`
+                const Hm=`${user.hunidity}`
+                document.querySelector('div .TemDataText').insertAdjacentHTML('beforeend',Tm)
+                document.querySelector('div .HumDataText').insertAdjacentHTML('beforeend',Hm)
+              })
+            })
+            .catch(error=>console.log(error))
+        </script>
+
+
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+      <script src="app.js"></script>
+    </div>
+  
+  </body>
+</html>
