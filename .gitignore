@@ -1,1 +1,4 @@
 .DS_Store
+piBackend/node_modules
+piBackend/config.js
+pushDataToFirebase/serviceAccount.js
